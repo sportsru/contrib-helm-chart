@@ -33,7 +33,7 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["/bin/sh"]
-          args: ["-c", ". /config/dynamicenv.sh && /app/bin/docker-entrypoint server"]
+          args: ["-c", ". /config/dynamicenv.sh && bin/run ./manage.py server"]
           volumeMounts:
             - name: config
               mountPath: /config
